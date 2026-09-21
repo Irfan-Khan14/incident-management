@@ -17,3 +17,12 @@ mta_archives/
 
 # @cap-js/cds-typer
 @cds-models
+
+# MTA deployment operation logs
+mta-op-*/
+
+# Environment files
+14
+.env
+15
+.*nv.*

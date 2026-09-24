@@ -1,0 +1,203 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Customers
+# @name Customers_GET
+GET {{server}}/odata/v4/admin/Customers
+Authorization: Basic {{username}}:{{password}}
+
+
+### Customers
+# @name Customers_POST
+POST {{server}}/odata/v4/admin/Customers
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "Customers-1347990",
+  "firstName": "firstName-1347990",
+  "lastName": "lastName-1347990",
+  "name": "name-1347990",
+  "email": "email-1347990",
+  "phone": "phone-1347990",
+  "addresses": [
+    {
+      "ID": "22673668-535c-4741-bdc4-e491bc54e779",
+      "city": "city-22673668",
+      "postCode": "postCode-22673668",
+      "streetAddress": "streetAddress-22673668",
+      "createdAt": "2010-03-05T00:00:00.000Z",
+      "createdBy": "createdBy.dhz44@example.org",
+      "modifiedAt": "2008-10-05T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dhz44@example.org"
+    },
+    {
+      "ID": "22673669-ea16-4e8d-b7a2-1d5e99e36514",
+      "city": "city-22673669",
+      "postCode": "postCode-22673669",
+      "streetAddress": "streetAddress-22673669",
+      "createdAt": "2018-06-29T00:00:00.000Z",
+      "createdBy": "createdBy.dhz45@example.org",
+      "modifiedAt": "2007-08-18T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dhz45@example.net"
+    }
+  ],
+  "createdAt": "2017-04-02T00:00:00.000Z",
+  "createdBy": "createdBy.sw46@example.org",
+  "modifiedAt": "2001-05-28T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.sw46@example.net"
+}
+
+
+### Customers
+# @name Customers_PATCH
+PATCH {{server}}/odata/v4/admin/Customers/Customers-1347990
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "Customers-1347990",
+  "firstName": "firstName-1347990",
+  "lastName": "lastName-1347990",
+  "name": "name-1347990",
+  "email": "email-1347990",
+  "phone": "phone-1347990",
+  "addresses": [
+    {
+      "ID": "22673668-535c-4741-bdc4-e491bc54e779",
+      "city": "city-22673668",
+      "postCode": "postCode-22673668",
+      "streetAddress": "streetAddress-22673668",
+      "createdAt": "2010-03-05T00:00:00.000Z",
+      "createdBy": "createdBy.dhz44@example.org",
+      "modifiedAt": "2008-10-05T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dhz44@example.org"
+    },
+    {
+      "ID": "22673669-ea16-4e8d-b7a2-1d5e99e36514",
+      "city": "city-22673669",
+      "postCode": "postCode-22673669",
+      "streetAddress": "streetAddress-22673669",
+      "createdAt": "2018-06-29T00:00:00.000Z",
+      "createdBy": "createdBy.dhz45@example.org",
+      "modifiedAt": "2007-08-18T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.dhz45@example.net"
+    }
+  ],
+  "createdAt": "2017-04-02T00:00:00.000Z",
+  "createdBy": "createdBy.sw46@example.org",
+  "modifiedAt": "2001-05-28T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.sw46@example.net"
+}
+
+
+### Customers
+# @name Customers_DELETE
+DELETE {{server}}/odata/v4/admin/Customers/Customers-1347990
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Incidents
+# @name Incidents_GET
+GET {{server}}/odata/v4/admin/Incidents
+Authorization: Basic {{username}}:{{password}}
+
+
+### Incidents
+# @name Incidents_POST
+POST {{server}}/odata/v4/admin/Incidents
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "42604060-15a0-4a74-997d-23da6e71846c",
+  "customer": {
+    "ID": "Customers-1347990"
+  },
+  "title": "title-4260406",
+  "urgency": {
+    "code": "L"
+  },
+  "status": {
+    "code": "R"
+  },
+  "conversation": [
+    {
+      "ID": "28504033-9772-4e57-9b92-69fe7341e178",
+      "timestamp": "2010-10-05T00:00:00.000Z",
+      "author": "author.gyxup@example.com",
+      "message": "message-28504033"
+    },
+    {
+      "ID": "28504034-bf5d-4d81-a73c-c9bb2489a218",
+      "timestamp": "2018-05-15T00:00:00.000Z",
+      "author": "author.gyxuq@example.com",
+      "message": "message-28504034"
+    }
+  ],
+  "createdAt": "2021-04-02T00:00:00.000Z",
+  "createdBy": "createdBy.2jbcm@example.com",
+  "modifiedAt": "2017-06-01T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.2jbcm@example.org"
+}
+
+
+### Incidents
+# @name Incidents_PATCH
+PATCH {{server}}/odata/v4/admin/Incidents/42604060-15a0-4a74-997d-23da6e71846c
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "42604060-15a0-4a74-997d-23da6e71846c",
+  "customer": {
+    "ID": "Customers-1347990"
+  },
+  "title": "title-4260406",
+  "urgency": {
+    "code": "L"
+  },
+  "status": {
+    "code": "R"
+  },
+  "conversation": [
+    {
+      "ID": "28504033-9772-4e57-9b92-69fe7341e178",
+      "timestamp": "2010-10-05T00:00:00.000Z",
+      "author": "author.gyxup@example.com",
+      "message": "message-28504033"
+    },
+    {
+      "ID": "28504034-bf5d-4d81-a73c-c9bb2489a218",
+      "timestamp": "2018-05-15T00:00:00.000Z",
+      "author": "author.gyxuq@example.com",
+      "message": "message-28504034"
+    }
+  ],
+  "createdAt": "2021-04-02T00:00:00.000Z",
+  "createdBy": "createdBy.2jbcm@example.com",
+  "modifiedAt": "2017-06-01T00:00:00.000Z",
+  "modifiedBy": "modifiedBy.2jbcm@example.org"
+}
+
+
+### Incidents
+# @name Incidents_DELETE
+DELETE {{server}}/odata/v4/admin/Incidents/42604060-15a0-4a74-997d-23da6e71846c
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Urgency
+# @name Urgency_GET
+GET {{server}}/odata/v4/admin/Urgency
+Authorization: Basic {{username}}:{{password}}
+
+
+### Status
+# @name Status_GET
+GET {{server}}/odata/v4/admin/Status
+Authorization: Basic {{username}}:{{password}}

@@ -158,7 +158,7 @@ resources:
                 DynamicDestination: true
     requires:
       - name: srv-api
-      
+
   - name: incident-management-html5-repo-host
     type: org.cloudfoundry.managed-service
     parameters:

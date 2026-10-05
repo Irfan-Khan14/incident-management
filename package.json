@@ -26,7 +26,8 @@
           "users": {
             "alice": {
               "roles": [
-                "support"
+                "support",
+                "admin"
               ]
             },
             "bob": {

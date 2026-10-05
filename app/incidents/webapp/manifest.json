@@ -23,6 +23,10 @@
           "annotations": [],
           "odataVersion": "4.0"
         }
+      },
+      "processsFlowService": {
+      "type": "JSON",
+      "uri": "./ext/data/lanes.json"
       }
     },
     "crossNavigation": {
@@ -61,7 +65,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.ui.vbm": {}
       }
     },
     "contentDensities": {
@@ -87,6 +92,11 @@
       "@i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "uri": "i18n/i18n.properties"
+      },
+      "processsFlowModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "processsFlowService",
+        "preload": true
       }
     },
     "resources": {
@@ -126,6 +136,16 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "columns": {
+                    "StatusProcess": {
+                      "header": "{i18n>progress}",
+                      "position": {
+                        "anchor": "DataField::status::descr",
+                        "placement": "After"
+                      },
+                      "template": "ns.incidents.ext.fragment.StatusProcess"
+                    }
                   }
                 }
               },
@@ -149,9 +169,55 @@
                       "name": "Inline"
                     }
                   }
+                },
+                "@com.sap.vocabularies.UI.v1.FieldGroup#GeneratedGroup": {
+                  "actions": {
+                    "Location": {
+                      "press": ".extension.ns.incidents.ext.controller.OPControllerExtension.viewLocation",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "{i18n>location}"
+                    }
+                  }
+                }
+              },
+              "content": {
+                "header": {
+                  "facets": {
+                    "StatusProcess": {
+                      "template": "ns.incidents.ext.fragment.StatusProcess",
+                      "title": "{i18n>process}",
+                      "stashed": false,
+                      "requestGroupId": "Heroes",
+                      "flexSettings": {
+                        "designtime": "Default"
+                      }
+                    }
+                  }
+                },
+                "body": {
+                  "sections": {
+                    "ProcessFlow": {
+                      "template": "ns.incidents.ext.fragment.ProcessFlow",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "i18nOverview"
+                      },
+                      "title": "Process Flow"
+                    }
+                  }
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "extends": {
+      "extensions": {
+        "sap.ui.controllerExtensions": {
+          "sap.fe.templates.ObjectPage.ObjectPageController": {
+            "controllerName": "ns.incidents.ext.controller.OPControllerExtension"
           }
         }
       }
